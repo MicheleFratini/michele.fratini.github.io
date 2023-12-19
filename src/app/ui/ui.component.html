@@ -1,0 +1,178 @@
+<img src="../assets/immagineui.jpg" alt="facing_image" class="face">
+<!-- Simple Navbar -->
+<nav class="navbarui">
+    <button (click)="getReservations()" mat-button class="menubuttons">Le tue prenotazioni</button>
+    <button (click)="getItineraries()" mat-button style="margin-left: 10px;" class="menubuttons">Itinerari</button>
+    <button (click)="getActivities()" mat-button style="margin-left: 10px;" class="menubuttons">Prenotazione
+        attività</button>
+    <button (click)="getContacts()" mat-button style="margin-left: 10px;" class="menubuttons">Contatti</button>
+</nav>
+
+<!-- I've prefered to create more divs instead a new component. So, there's a div for each navbar link -->
+<div id="yourReservations" class="section1">
+
+    <div id="first" class="sectionHome">
+        <p style="font-size: 24px;">Benvenuto nella tua area riservata!</p>
+        <p style="font-size: 19px;"><br>
+            Dal menu in alto potrai navigare in essa</p>
+    </div>
+</div>
+
+<div id="itineraries" style="display: none;" class="section2">
+    <p style="font-family: 'Raleway Thin';
+    font-size: 19px;
+    margin-top: 50px;">Che voi siate qui per due giorni o due settimane almeno uno dei nostri splendidi borghi lo
+        dovrvete visitare!</p>
+    <div style="display: inline-flex; margin-top: 50px;">
+        <div style="display: block;">
+            <img src="../assets/arrone.jpg" alt="" style="width: 600px; height: 300px;">
+            <img src="../assets/assisi.jpg" alt="" style="width: 600px; height: 300px;">
+            <div style="display: block; margin-top: -5px;">
+                <img src="../assets/perugia.jpg" alt="" style="width: 600px; height: 300px;">
+                <img src="../assets/castelluccio.jpg" alt="" style="width: 600px; height: 300px;">
+            </div>
+        </div>
+    </div>
+    <p style="font-family: 'Raleway Thin';
+    font-size: 19px;
+    margin-top: 50px;">Tra i tanti luoghi da visitare, quelli che consigliamo vivamente sono:
+    </p>
+    <ul style="display: inline-flex; font-family: 'Raleway Thin';
+    font-size: 19px;">
+        <div style="display: block;">
+            <li>Rasiglia</li><br>
+            <li>Castelluccio di Norcia</li><br>
+            <li>Assisi</li><br>
+            <li>Spello</li><br>
+            <li>Trevi</li><br>
+            <li>Todi</li><br>
+            <li>Spoleto</li><br>
+            <li>Monteluco</li><br>
+            <li>Piediluco</li><br>
+        </div>
+
+    </ul>
+
+    <p style="font-family: 'Raleway Thin';
+    font-size: 19px;
+    margin-top: 50px;  margin-bottom: 100px;
+">Nel seguente link troverete una serie di itinerari che includono la maggior parte dei luoghi
+        menzionati:
+        <a href="https://www.ricettealvolo.it/magica-umbria-cosa-vedere-e-3-itinerari-per-tutti-i-gusti/">Itinerari in
+            Umbria</a>
+    </p>
+    <!-- <video width="320" height="240" autoplay>
+        <source src="movie.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+      </video>  -->
+</div>
+
+<div id="bookActivities" style="display: none;" class="section3">
+    <p style="font-size: 25px; font-family: 'Quick Gram'; margin-top: 100px;">Di seguito troverai tutti i contatti per
+        prenotare le attività viste nella home page</p>
+    <div style="display: inline-flex;">
+        <div style="display: inline-block;">
+            <p style="font-size: 30px; font-family: 'Quick Gram'; margin-top: 100px;"> Rafting</p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 40px;"> Nera River Rafting: <a
+                    href="http://www.raftingnerariver.it/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Rafting Nomad: <a
+                    href="https://www.raftingnomad.com/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Umbria Rafting e Canoa (anche
+                molto altro: MTB, Trekking,...): <a href="http://www.umbriaraftingecanoa.it/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Gaia Rafting - Stazione di
+                Serravalle di Norcia: <a href="http://www.asgaia.it/rafting-in-umbria/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Rafting Marmore - Centro
+                Rafting Canoa Kayak: <a href="https://www.raftingmarmore.com/">Link</a></p>
+        </div>
+        <div style="display: inline-block; margin-left: 200px;">
+            <p style="font-size: 30px; font-family: 'Quick Gram'; margin-top: 100px;"> Mountain Bike</p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 40px;"> Greenways Italy Bike Tours and
+                Rental: <a href="http://www.greenwaysitaly.com/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Trasimeno Turismo Rental Bike &
+                Quad Tour: <a href="http://www.trasimenoturismo.com/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Orvieto Bike Tour: <a
+                    href="http://www.orvietobiketour.it/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> The Wandering Bike - Bike Tours
+                and Rental: <a href="https://www.thewanderingbike.it/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> ASD Blob Service - Umbria in
+                Mountain Bike: <a href="https://www.umbriainmountainbike.it/">Link</a></p>
+        </div>
+    </div>
+    <div style="display: inline-flex;">
+        <div style="display: inline-block;">
+            <p style="font-size: 30px; font-family: 'Quick Gram'; margin-top: 100px;"> Trekking</p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 40px;"> Trekking Monti Amerini: <a
+                    href="https://www.trekkingmontiamerini.com/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Exploring Umbria(molte altre
+                attività): <a href="http://www.exploring-umbria.com/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Le Storie di Loz: <a
+                    href="https://www.lestoriediloz.com/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Guide in Umbria S.r.l.: <a
+                    href="http://www.guideinumbria.com/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Umbria tour guides and
+                experiences - UMBRIA CON ME: <a href="https://www.umbriaconme.com/">Link</a></p>
+        </div>
+        <div style="display: inline-block; margin-left: 200px;">
+            <p style="font-size: 30px; font-family: 'Quick Gram'; margin-top: 100px;"> Tennis</p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 40px;"> Happy Village(anche padel): <a
+                    href="http://bit.ly/playtomic-hv">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Junior Club Terni | Tennis &
+                Padel: <a href="https://junior-club-terni.business.site/?utm_source=gmb&utm_medium=referral">Link</a>
+            </p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Collescipoli Sporting Club
+                padel - Campi coperti indoor/outdoor Padel Terni , Bar , Sporting cafè: <a
+                    href="http://www.umbriaraftingecanoa.it/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Tennis Club Todi 1971: <a
+                    href="https://www.facebook.com/tennisclubtodi/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Tennis Club Perugia: <a
+                    href="https://www.tennisclubperugia.it/">Link</a></p>
+        </div>
+    </div>
+    <div style="display: inline-flex; margin-bottom: 100px;">
+        <div style="display: inline-block;">
+            <p style="font-size: 30px; font-family: 'Quick Gram'; margin-top: 100px;"> Degustazioni</p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 40px;"> Terre de la Custodia: <a
+                    href="https://www.terredelacustodia.com/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Moretti Cantina e Frantoio: <a
+                    href="http://www.morettiomero.it/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Antonelli San Marco Cantina: <a
+                    href="https://www.antonellisanmarco.it/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Arnaldo Caprai Società Agricola
+                s.r.l.: <a href="http://www.arnaldocaprai.it/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Cantina La Veneranda: <a
+                    href="https://www.laveneranda.com/">Link</a></p>
+        </div>
+        <div style="display: inline-block; margin-left: 200px;">
+            <p style="font-size: 30px; font-family: 'Quick Gram'; margin-top: 100px;"> Cultura</p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 40px;"> Museo Archeologico Nazionale
+                dell'Umbria: <a
+                    href="https://www.musei.umbria.beniculturali.it/musei/museo-archeologico-nazionale-dellumbria/">Link</a>
+            </p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Galleria Nazionale dell'Umbria:
+                <a href="https://gallerianazionaledellumbria.it/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Museo del Capitolo di San
+                Lorenzo: <a href="https://www.secretumbria.it/museo-del-capitolo-perugia/">Link</a></p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Foro Romano e Museo
+                Archeologico: <a
+                    href="http://www.visit-assisi.it/monumenti-e-luoghi-dinteresse-2/musei/foro-romano-e-museo-archeologico/">Link</a>
+            </p>
+            <p style="font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 10px;"> Musei del Castello di Alviano:
+                <a
+                    href="https://www.google.com/search?q=musei+umbria&client=firefox-b-d&sca_esv=591817350&biw=1920&bih=955&hotel_occupancy=2&tbm=lcl&ei=3SqAZaCwGLWL9u8PjPybyAU&ved=0ahUKEwjgksPw7piDAxW1hf0HHQz-BlkQ4dUDCAk&uact=5&oq=musei+umbria&gs_lp=Eg1nd3Mtd2l6LWxvY2FsIgxtdXNlaSB1bWJyaWEyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSPAaUNMGWO0UcAB4AJABAJgBgAGgAcIJqgEEMTIuMbgBA8gBAPgBAcICBhAAGB4YDcICDBAAGIAEGIoFGEMYCsICDhAAGIAEGIoFGLEDGIMBwgILEAAYgAQYsQMYgwHCAggQABiABBixA8ICChAAGIAEGIoFGEOIBgE&sclient=gws-wiz-local#rlfi=hd:;si:15710975832993705861,l,CgxtdXNlaSB1bWJyaWFIgpCpodu3gIAIWhIQABgAIgxtdXNlaSB1bWJyaWGSAQZtdXNldW2qAT8QASoJIgVtdXNlaSgHMh4QASIa_7iQgcENw7PUsgVc5ZNh9QpVDmujC6VoF-8yEBACIgxtdXNlaSB1bWJyaWE,y,9YkPEnccClc;mv:[[43.94411360568409,13.942168112109364],[42.198563594315914,11.286223287890612]]">Link</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="contacts" style="display: none;" class="section4">
+    <div style="display: inline-flex ;text-align: center; margin-top: 120px;">
+        <p style="margin-top: 50px;font-family: 'Raleway Thin' ; font-size: 17px;">
+            Numeri di telefono:<br><br>
+            Stefania : +39 3392458349
+        </p>
+        <p style="margin-left:100px; margin-top: 50px;font-family: 'Raleway Thin' ; font-size: 17px;">
+            E-mail: <br><br>
+            casatrastullo&#64;libero.it</p>
+    </div>
+</div>

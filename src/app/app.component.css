@@ -1,0 +1,263 @@
+@media (max-width: 700px) {
+  body {
+    width: 100%;
+    background-color: #fffffa;
+  }
+  /* mobile CSS: hide .desktop div */
+  #title {
+    font-size: 40px;
+    font-family: 'Anthony Hunters';
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: device-width;
+    margin: auto;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 85px;
+    display: flex;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    /* vertical-align: middle; */
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+  }
+
+  .face {
+    position: relative;
+    width: 100%;
+    margin-top: 85px;
+  }
+  .center {
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+  .menubuttons {
+    position: relative;
+    font-family: 'Anthony Hunters';
+    font-size: 30px;
+    margin-top: 0.8rem;
+    margin-right: 25px;
+    text-align: center;
+  }
+  .menubuttons:hover {
+    color: green;
+    transition: 0.7s;
+  }
+  .panImage {
+    margin-left: 100px;
+    margin-top: 150px;
+    width: 500px;
+    max-height: 300px;
+  }
+  .desImage {
+    margin-right: 100px;
+    margin-top: 150px;
+    width: 500px;
+    max-height: 300px;
+  }
+}
+@media (min-width: 1500px) {
+  /* desktop CSS: hide .mobile div */
+
+  #title {
+    font-size: 50px;
+    font-family: 'Anthony Hunters';
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: device-width;
+    margin: auto;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .title {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .face {
+    position: absolute;
+    width: 100%;
+    margin-top: 25px;
+  }
+  .reviews_window {
+    height: 500px;
+    width: 450px;
+    position: asbolute;
+    background-color: white;
+    float: right;
+    margin-right: 200px;
+    margin-top: 150px;
+    text-align: center;
+    opacity: 85%;
+  }
+
+  .navbar {
+    display: inline-block;
+    text-align: center;
+    position: fixed;
+    margin: auto !important;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    box-shadow: .0200rem .125rem .4375rem rgba(0, 0, 0, .5);
+    z-index: 1;
+    color: black;
+    
+  }
+  .user {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    top: 30px;
+    right: 20px;
+  }
+
+  #useri {
+    width: 100%;
+    height: 50%;
+  }
+
+  .menubuttons {
+    text-align: center;
+    font-family: 'Anthony Hunters';
+    font-size: 35px;
+    margin-top: -70px;
+    margin-right: 25px;
+    cursor: pointer;
+  }
+  .menubuttons:hover {
+    color: green;
+    transition: 0.7s;
+  }
+
+  .gallery1 {
+    width: 90%;
+    margin: auto;
+    justify-content:center;
+    align-items: center;
+    
+    display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+      
+    
+  }
+   /* Styling Particular Image */
+   .gallery1 img {
+    width: 300px;
+    height: 150px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+   /* onHover image will expand little bit */
+   .gallery1 img:hover {
+    transform: scale(1.2);
+    border-radius: 10px;
+    cursor: zoom-in;
+  }
+
+  .image-popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+ 
+  .popImage {
+    width: 90%;
+    max-width: 600px;
+  }
+  /* close button when we want to close the bigger image */
+  .close-button {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .close-button:hover{
+    color: red;
+  }
+ 
+
+
+  .button {
+    position: relative;
+    text-align: center;
+    min-width: 160px;
+    height: 46px;
+    margin: 30px 3px 30px 3px;
+    padding: 0 25px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #a5a5a5;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #a5a5a5;
+    font-family: Gotham Medium;
+    font-size: 21px;
+    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    float: left;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .button:hover {
+    background-color: #a5a5a5;
+    color: white;
+    transition: 0.6s;
+  }
+
+  .imageDimension {
+    max-width: 700px;
+    margin-left: 150px;
+  }
+
+  .google-map iframe {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    margin-top: 80px;
+    position: relative;
+  }
+
+  .example-card {
+    max-width: 400px;
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+}

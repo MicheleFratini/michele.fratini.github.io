@@ -1,0 +1,13 @@
+.user {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+    top: 140px;
+    right: 23px;
+  }
+.user:hover {
+    width: 35px;
+    height: 35px;
+    transition: 0.2s;
+}

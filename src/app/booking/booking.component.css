@@ -1,0 +1,54 @@
+mat-form-field {
+  margin-right: 12px;
+  color: black;
+}
+.extension_style {
+  font-size: 35px;
+  font-family: 'Anthony Hunters';
+  margin-top: 60px;
+  height: 40px;
+  width: 100%;
+  transition: 0.7s
+}
+.extension_style1 {
+  display: block;
+  border-right: 2px solid black;
+  margin-top: 70px;
+  height: 400px;
+  width: 100%;
+  
+}
+.extension_style1withoutborder {
+  display: block;
+  margin-top: 70px;
+  height: 400px;
+  width: 100%;
+  
+}
+.extension_style2 {
+  text-align: center;
+  display: inline-flex;
+  height: 600px;
+  width: 100%;
+  transition: 1s;
+}
+
+.notextended {
+  display: none;
+}
+
+.B {
+  background-color: white;
+  color: black !important;
+  font-size: 17px;
+  border-radius: 15%;
+  margin-top: 30px;
+  width: 20%;
+  height: 10%;
+}
+.B:hover {
+  background-color: #a5a5a5;
+  color: white;
+  transition: 0.6s;
+}
+

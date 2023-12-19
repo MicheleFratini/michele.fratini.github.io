@@ -1,0 +1,499 @@
+<title id="user">CasaTratullo</title>
+
+<!-- <div class="title" role="banner">
+    <!--     <img class="toolbar" src="../assets/forest.png" alt="Immersi nella natura">
+     <span id="title">Casa Trastullo</span>
+</div> -->
+
+<!-- Navbar -->
+<nav class="navbar">
+    <button onclick="window.location.href='#overview'" mat-button class="menubuttons"
+        style="margin-left: 50px;">Panoramica</button>
+    <button onclick="window.location.href='#gallery'" mat-button class="menubuttons">Galleria</button>
+    <button onclick="window.location.href='#description'" mat-button class="menubuttons">Descrizione</button>
+    <button onclick="window.location.href='#location'" mat-button class="menubuttons"
+        style="margin-right: 40px;">Location</button>
+    <img src="../assets/logoCasaTrastullo.png"
+        style="width: 150px;height: 75px; margin-top: 50px;margin-top: 15px; text-align: center;">
+    <button onclick="window.location.href='#activities'" mat-button class="menubuttons"
+        style="margin-left: 40px;">Attività</button>
+    <button onclick="window.location.href='#prices'" mat-button class="menubuttons">Prezzi</button>
+    <button onclick="window.location.href='#booking'" mat-button class="menubuttons">Prenota Ora</button>
+    <button onclick="window.location.href='#contacts'" mat-button class="menubuttons">Contatti</button>
+</nav>
+
+<!-- Here i'll call the login() funtction to check if ther is already a logged user, avoid to ask every time the login -->
+<a id="getUser" (click)="login()" style="cursor: pointer;">
+    <img class="user" src="../assets/user.png" alt="Accedi">
+</a>
+<router-outlet></router-outlet>
+
+<!-- Reviews -->
+<div style="position: relative; height: 770px;">
+    <img src="../assets/immUmbria.jpg" alt="facing_image" class="face" (error)="handleMissingImage($event)"
+        style="max-height: 750px;">
+    <div class="reviews_window">
+        <h1 style="font-family: 'Anthony Hunters'; margin-top: 20px; font-size: 40px;">Recensioni</h1>
+        <!-- This div print the reviewes's info that are in home.component.ts using the One-Way buinding -->
+        <div >
+            <button mat-button (click)="changeImage('Left')" style="font-family: 'Raleway Thin'; font-size: 20px;" ><</button>
+            <button mat-button (click)="changeImage('Right')" style="font-family: 'Raleway Thin'; font-size: 20px;">></button>
+            <div style="display: flex; margin-left: 30px; margin-right: 30px; margin-top: 20px;">
+                <img id="third_card" src={{path3}} >
+                <div style="display: block;">
+                    <p style="margin-left:20px; font-size: 18px; font-family: 'Raleway Thin'; margin-top:10px;">{{title}}</p>
+                    <br>
+                    <p style="margin-left:20px">{{text}}</p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Overview -->
+<div id="overview" style="display: flex;">
+    <img src="../assets/immUmbria.jpg" style="margin-left: 100px; margin-top: 150px; max-width: 700px;">
+
+    <p style="margin-top: 180px; margin-left: 50px; margin-right: 50px; font-size: 15px;">
+        <span style=" margin-left: 350px; font-family: Anthony Hunters; font-size: 45px;">Panoramica</span>
+        <br><br><br>
+        Casa Trastullo è un agriturismo situato nel cuore dell'Umbria, immerso nella campagna, l'ideale per chiunque
+        voglia godersi giorni di spensieratezza.<br>
+        La struttura, ristrutturata nel 2001, offre la possibilità di soggiornare in 3 appartamenti (visti nel
+        dettaglio
+        nella sezione dedicata), ognuno dotato di area living,
+        cucina completa, due camere da letto, un bagno e uno spazio all'aperto dedicato. <br>
+        Nel 2010 è stata aggiunta la piscina, volta a dare un confort in più anche agli amanti dell'acqua, con un
+        ampia
+        postazione riservata <br>
+        per ogni appartamento e una bella vista sul nostro territorio. <br> <br>
+        Per gli ospiti a cui piace visitare le nostre città e i nostri borghi vi farà piacere sapere che da Casa
+        Trastullo è tutto <br>
+        raggiungibile in tempi ragionevoli (tempi e posti visti nel dettaglio nella sezione location). <br>
+    </p>
+</div>
+
+<div id="gallery" style="text-align: center;">
+    <img src="../assets/divider.png" style="height: 300px;">
+</div>
+
+
+<!--  Gallery -->
+<!-- I've used a good and quick tool to display the images, named "Fancybox" -->
+<h1 style="font-family: 'Anthony Hunters'; font-size: 50px; margin-bottom: 100px; text-align: center;">
+    Gallery</h1>
+
+
+<div class="gallery1">
+
+    <a data-fancybox="default-gallery" data-src="../assets/immUmbria.jpg">
+        <img src="../assets/immUmbria.jpg" width="200" height="150" alt="" />
+    </a>
+
+    <a data-fancybox="default-gallery" data-src="../assets/immUmbria.jpg">
+        <img src="../assets/immUmbria.jpg" width="200" height="150" alt="" />
+    </a>
+    <a data-fancybox="default-gallery" data-src="../assets/immUmbria.jpg">
+        <img src="../assets/immUmbria.jpg" width="200" height="150" alt="" />
+    </a>
+    <a data-fancybox="default-gallery" data-src="../assets/immUmbria.jpg">
+        <img src="../assets/immUmbria.jpg" width="200" height="150" alt="" />
+    </a>
+    <a data-fancybox="default-gallery" data-src="../assets/immUmbria.jpg">
+        <img src="../assets/immUmbria.jpg" width="200" height="150" alt="" />
+    </a>
+    <a data-fancybox="default-gallery" data-src="../assets/immUmbria.jpg">
+        <img src="../assets/immUmbria.jpg" width="200" height="150" alt="" />
+    </a>
+    <a data-fancybox="default-gallery" data-src="../assets/immUmbria.jpg">
+        <img src="../assets/immUmbria.jpg" width="200" height="150" alt="" />
+    </a>
+    <a data-fancybox="default-gallery" data-src="../assets/immUmbria.jpg">
+        <img src="../assets/immUmbria.jpg" width="200" height="150" alt="" />
+    </a>
+    <a data-fancybox="default-gallery" data-src="../assets/immUmbria.jpg">
+        <img src="../assets/immUmbria.jpg" width="200" height="150" alt="" />
+    </a>
+    <a data-fancybox="default-gallery" data-src="../assets/immUmbria.jpg">
+        <img src="../assets/immUmbria.jpg" width="200" height="150" alt="" />
+    </a>
+</div>
+
+<!-- Description -->
+
+<div id="description" style="text-align: center;">
+    <img src="../assets/divider.png" style="height: 300px;">
+</div>
+
+<!-- In this section i've used a new component to manage the apartment view -->
+<section id="description">
+    <h1 style=" text-align: center; font-family: Anthony Hunters; font-size: 55px;">Descrizione
+    </h1>
+    <h1 style="margin-top: 100px; margin-left: 150px; font-family: Anthony Hunters; font-size: 45px;">Appartamenti
+    </h1>
+    <apartments></apartments>
+    <div style=" margin-top: 150px;">
+        <div style="display: flex;">
+
+            <p style="font-size: 17px; margin-top: 100px; margin-left: 100px; margin-right: 100px;">
+                <span style="font-family: Anthony Hunters; font-size: 45px;">La piscina</span>
+                <br><br>
+                Contornata da un magnifico panorama, caratteristico dell'Umbria, la piscina con ampio solarium sarà
+                un
+                vero sollievo
+                nelle vostre giornate estive. Grazie alle generose dimensioni di (...) può ospitare comodamente la
+                capienza
+                massima dell'agriturismo. Grazie alle piante, parte del prato che circonda la piscina, è ombreggiata
+                e
+                predisposta per potersi rilassare, magiare all'aperto, ecc...
+                <br><br>
+                <button class="button" data-fancybox="default-gallery" data-src="../assets/pool.jpg">Vedi in
+                    galleria
+                </button>
+            </p>
+            <img class="imageDimension" src="../assets/pool.jpg" style="margin-right: 150px; max-width: 700px;">
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Location  -->
+<!-- I've used Google Map to show the exact location of the agriturism -->
+<div id="location" style="text-align: center;">
+    <img src="../assets/divider.png" style="height: 300px;">
+</div>
+
+<section>
+    <h1 style="text-align: center; font-family: Anthony Hunters; font-size: 55px;">Location</h1>
+    <div class="google-map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11721.98993181928!2d12.5424942!3d42.7355258!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132eedfbad5689ab%3A0xd2cac2a649620f6a!2sCasetta!5e0!3m2!1sit!2sit!4v1696857210092!5m2!1sit!2sit"
+            style="border:0; height: 600px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+</section>
+
+<!-- Activities  -->
+<div id="activities" style="text-align: center;">
+    <img src="../assets/divider.png" style="height: 300px;">
+</div>
+
+<!-- Just a simple section where i used the mat-cards(from Angualar Material) to display the activities -->
+<section style="text-align: center;">
+    <h1 style="text-align: center; font-family: Anthony Hunters; font-size: 55px;">Attività</h1>
+    <p style="font-size: 17px; margin-top: 80px; margin-left: 400px; margin-right: 400px;">
+        Anche per quanto riguarda il divertimento la nostra zona dell'Umbria soddisferà ogni tipo di richieste.
+        In basso troverete una serie di attività di vario tipo, sport, visite guidate, degustazioni di vini e molto
+        altro.
+    </p>
+
+    <div style="display: flex; margin-left: 200px; ">
+        <!--Rafting-->
+        <mat-card class="example-card">
+            <img mat-card-image src="../assets/rafting.jpg">
+            <mat-card-content style="font-size: 16px">
+                <h1 style="font-family: 'Merienda One', cursive; text-align: center; margin-top: 20px;">Rafting</h1>
+                <p>
+                    Una delle attività acquatiche più emozionanti e adrenaliniche dell'Umbria,
+                    l'ideale combattere il caldo estivo divertendosi.
+                    Situata sul fiume Corno nella bellissima area della Valnerina è facilmente
+                    raggiungibile dalla nostra struttura, circa 27 minuti in auto.
+                </p>
+            </mat-card-content>
+        </mat-card>
+
+        <!--MTB-->
+        <mat-card class="example-card" style="margin-left: auto;margin-right: auto;">
+            <img mat-card-image src="../assets/MTB.jpg">
+            <mat-card-content style="font-size: 16px">
+                <h1 style="font-family: 'Merienda One', cursive; text-align: center; margin-top: 20px;">
+                    Mountain-Bike</h1>
+                <p>
+                    Una bella pedalata per liberare la mente facendo attività fisica non è una cattiva idea!
+                    Casa Trastullo mette a disposizione un numero limitato di MTB per visitare i paesini
+                    della zona o le vicine montagne dell'appennino centrale. In alternativa, non molto lontano
+                    dalla nostra struttura, ci sono appassionati che organizzano escursioni guidate, con bici
+                    (elettriche e non) a noleggio, per visitare borghi medioevali, cascate, sentieri nei boschi
+                    ecc...
+                    Uno dei posti attrezzati e disposti per erogare questo servizio si trova a 40 minuti circa dalla
+                    struttura,
+                    nella direzione della Valnerina, con bellissimi borghi e stupendi panorami.
+                </p>
+            </mat-card-content>
+        </mat-card>
+
+        <!--Trekking-->
+        <mat-card class="example-card" style="margin-right: 200px">
+            <img mat-card-image src="../assets/trekking.jpg">
+            <mat-card-content style="font-size: 16px">
+                <h1 style="font-family: 'Merienda One', cursive; text-align: center; margin-top: 20px;">Trekking
+                </h1>
+                <p>
+                    Per gli amanti della natura che amano camminare l'Umbria offre terreno fertile.
+                    Ci sono una miriade di percorsi in ogni parte di essa, partendo da Castelluccio di Norcia
+                    fino al parco fluviale del Tevere. Panorami mozzafiato attendono solo di essere visti.
+                    Per chi non se la sente di andare all'esplorazione da se ci sono molti tour guidati nei posti
+                    più caratteristici e belli della nostra magnifica regione.
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div style="display: flex; margin-left: 200px;">
+
+        <!--Tennis-->
+        <mat-card class="example-card">
+            <img mat-card-image src="../assets/tennis1.jpg">
+            <mat-card-content style="font-size: 16px">
+                <h1 style="font-family: 'Merienda One', cursive; text-align: center; margin-top: 20px;">Tennis
+                </h1>
+                <p>
+                    La nostra zona presenta molti circoli di tennis, spesso inclusi in centri sportivi con anche
+                    altri sport
+                    come padel, calcetto ecc...
+                    Si possono prenotare lezioni e/o prenotare campi per giocare con gli amici per non perdere
+                    l'allenamento
+                    anche in vacanza.
+                    Il circolo più vicino alla nostra struttura è a 10 minuti circa.
+                </p>
+            </mat-card-content>
+        </mat-card>
+
+        <!--Wine Tasting-->
+        <mat-card class="example-card" style="margin-left: auto; margin-right: auto;">
+            <img src="../assets/vino.jpg">
+            <mat-card-content style="font-size: 16px">
+                <h1 style="font-family: 'Merienda One', cursive; text-align: center; margin-top: 20px;">Degustazioni
+                </h1>
+                <p>
+                    Amanti del buon vino state tranquilli, qua non rimarrete minimamente delusi.
+                    Nelle nostre zone ci sono decine e decine di cantine dove potrete degustare i vini locali.
+                    Tutte queste cantine offrono tour guidati per spiegare tutto ciò che riguarda l'uva da loro
+                    trattata e tutte le fasi del processo di vinificazione.
+                    Accopagnati dal vino potrete degustare anche cibi locali, come salumi, formaggi, funghi e molto
+                    altro.
+                </p>
+            </mat-card-content>
+        </mat-card>
+
+        <!--ALTRO-->
+        <mat-card class="example-card" style="margin-right: 200px;">
+            <img mat-card-image src="../assets/museum.jpg">
+            <mat-card-content style="font-size: 16px">
+                <h1 style="font-family: 'Merienda One', cursive; text-align: center; margin-top: 20px;">Curltura
+                </h1>
+                <p>
+                    Per i più curiosi e interessati alla cultura l'Umbria presenta molti musei e gallerie che
+                    racchiudono
+                    anni e anni di ritrovamenti storici/artistici.
+                    A partire dalla più vicina area archeologica di Carsulae alla galleria nazionale dell'Umbria a
+                    Perugia,
+                    troverete sicuramente un luogo da visitare che vi affascinerà e vi farà scoprire l'arte Umbra.
+
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</section>
+
+<!-- Prices -->
+<!-- Handmade price's table -->
+<div id="prices" style="text-align: center;">
+    <img src="../assets/divider.png" style="height: 300px;">
+</div>
+
+
+<div style="text-align: center;">
+    <span style="font-family: 'Anthony Hunters'; font-size: 55px;">Prezzi</span>
+    <br><br><br>
+    <div style="display: inline-flex;">
+        <tbody>
+            <tr>
+                <td colspan="2" height="26"></td>
+                <td width="153"></td>
+                <td width="24">&nbsp;</td>
+                <!-- <td valign="top" width="141">dal 07/01<br>al 31/05<br>dal 01/10<br>al 23/12</td> -->
+                <td width="25">&nbsp;</td>
+                <td width="30">&nbsp;</td>
+                <!-- <td valign="top" width="131">dal 01/06<br>al 30/06<br>al 27/08<br>al 30/09</td> -->
+                <td width="25">&nbsp;</td>
+                <td width="41">&nbsp;</td>
+                <!-- <td valign="top" width="136">dal 01/07<br>al 29/08<br>dal 24/12<br>al 06/01</td> -->
+                <td width="13">&nbsp;</td>
+            </tr>
+            <tr style="height: 30px;">
+                <td height="25px" width="0"></td>
+                <td valign="top" width="400" bgcolor="#96785d" style="font-size: 17px;"><b>TARIFFA SETTIMANALE
+                        APPARTAMENTO</b></td>
+                <td valign="top" bgcolor="#96785d" width="200" style="font-size: 17px;">
+                    <div align="center">POSTI LETTO</div>
+                </td>
+                <td colspan="3" valign="top" width="250" bgcolor="#96785d" style="font-size: 17px;">
+                    <div align="center">BASSA STAGIONE</div>
+                </td>
+                <td colspan="3" valign="top" width="250" bgcolor="#96785d" style="font-size: 17px;">
+                    <div align="center">MEDIA STAGIONE</div>
+                </td>
+                <td colspan="3" valign="top" width="250" bgcolor="#96785d" style="font-size: 17px;">
+                    <div align="center">ALTA STAGIONE</div>
+                </td>
+            </tr>
+            <tr style="height: 30px;">
+                <td height="15"></td>
+                <td valign="top" bgcolor="#b9a694" style="font-size: 17px;">IL PORTICO</td>
+                <td valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">PAX 2 / 3 +1</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">€ 550/650</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">€600/700</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">€800/€ 850</div>
+                </td>
+            </tr>
+
+            <tr style="height: 30px;">
+                <td height="15"></td>
+                <td valign="top" bgcolor="#dcd2c9" style="font-size: 17px;">LA STALLA</td>
+                <td valign="top" bgcolor="#dcd2c9" style="font-size: 17px;">
+                    <div align="center">PAX 3 / 5 +1</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#dcd2c9" style="font-size: 17px;">
+                    <div align="center">€ 550/650</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#dcd2c9" style="font-size: 17px;">
+                    <div align="center">€ 650/€750</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#dcd2c9" style="font-size: 17px;">
+                    <div align="center">€ 800/€850</div>
+                </td>
+            </tr>
+
+            <tr style="height: 30px;">
+                <td height="15"></td>
+                <td valign="top" bgcolor="#b9a694" style="font-size: 17px;">IL PORTICHETTO</td>
+                <td valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">PAX 4 / 6 +1</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">€ 650/750</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">€ 750/€ 850</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">€850/€950</div>
+                </td>
+            </tr>
+
+            <tr style="height: 30px;">
+                <td height="15"></td>
+                <td colspan="11" valign="top" bgcolor="#96785d" style="font-size: 17px;"><b>TARIFFA GIORNALIERA
+                        APPARTAMENTO</b></td>
+            </tr>
+            <tr style="height: 30px;">
+                <td height="15"></td>
+                <td colspan="2" valign="top" bgcolor="#b9a694" style="font-size: 17px;">BILOCALE PAX 2 / 3 +1</td>
+                <td colspan="3" valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">€90</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">€100</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">€ 130</div>
+                </td>
+            </tr>
+            <tr style="height: 30px;">
+                <td height="15"></td>
+                <td colspan="2" valign="top" bgcolor="#dcd2c9" style="font-size: 17px;">TRILOCALE PAX /PAX 5 + 1 </td>
+                <td colspan="3" valign="top" bgcolor="#dcd2c9" style="font-size: 17px;">
+                    <div align="center">€110</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#dcd2c9" style="font-size: 17px;">
+                    <div align="center">€ 130</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#dcd2c9" style="font-size: 17px;">
+                    <div align="center">€ 150</div>
+                </td>
+            </tr>
+            <tr style="height: 30px;">
+                <td height="15"></td>
+                <td colspan="2" valign="top" bgcolor="#b9a694" style="font-size: 17px;">TRILOCALE PAX /PAX 4 + 3 </td>
+                <td colspan="3" valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">€ 130/€ 140</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">€ 150/€ 160</div>
+                </td>
+                <td colspan="3" valign="top" bgcolor="#b9a694" style="font-size: 17px;">
+                    <div align="center">€ 160/€ 170</div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="0"><br><br></td>
+            </tr>
+        </tbody>
+
+    </div>
+    <br>
+    <p>
+        PONTI-PASQUA-NATALE CAPODANNO ESCLUSI - SU RICHIESTA. <br>
+
+        I PREZZI INCLUDONO CONSUMI DI ACQUA, LUCE E GAS, BIANCHERIA E PULIZIA FINALE. <br>
+
+        BIMBI FINO A 3 ANNI GRATIS. <br>
+
+        SI ACCETTANO CARTE DI CREDITO E CONTANTI. <br>
+
+        ACCONTO ALLA PRENOTAZIONE PARI AL 30% MEDIANTE BONIFICO BANCARIO, IL SALDO SARA' VERSATO IL GIORNO DELL'ARRIVO.
+        <br>
+    </p>
+</div>
+
+
+<!-- Booking Section -->
+<!-- I've used a component to manage the booking activity, booking.component -->
+<div id="booking" style="text-align: center;">
+    <img src="../assets/divider.png" style="height: 300px;">
+</div>
+
+<div style="text-align: center;">
+    <span style="font-family: 'Anthony Hunters'; font-size: 55px;">Prenota Ora</span>
+    <br><br><br>
+    <p style="font-size: 17px; font-family: 'Raleway Thin';">Controlla la disponibilità della struttura: </p>
+    <app-booking></app-booking>
+</div>
+
+<!-- Contacts  -->
+
+<div id="contacts" style="text-align: center;">
+    <img src="../assets/divider.png" style="height: 300px;">
+</div>
+
+<h1 style="text-align:center; font-family: Anthony Hunters; font-size: 55px;">Contatti</h1>
+<div style="display: inline-block; text-align: center; width: 100%; height: 300px;">
+    <div style="display: inline-flex; text-align: center; margin-top: 100px;">
+
+        <p style="font-family: 'Raleway Thin' ; font-size: 17px;">
+            Numeri di telefono:<br><br>
+            Michele : +39 3882424439 <br>
+            Stefania : +39 3392458349 <br>
+            Gianluca : +39 3498076197 <br>
+        </p>
+           
+        <p style="margin-left:100px; font-family: 'Raleway Thin' ; font-size: 17px; margin-top: 30px;">
+            E-mail: <br><br>
+            casatrastullo&#64;libero.it
+        </p>
+    </div>
+</div>
