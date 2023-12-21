@@ -315,7 +315,7 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem("user", user.email);
           this._router.navigateByUrl("/admin");
         } else {
-          this.http.post("http://localhost:8080/user", user).subscribe(res => {
+          this.http.post("https://clio4rs.github.io/Casatrastullo_webapp/user", user).subscribe(res => {
             if (res === true) {
               sessionStorage.setItem("user", user.email);
               this._router.navigateByUrl("/youraccount");

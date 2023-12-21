@@ -1,61 +1,12 @@
 {
     "reservations": [
-        {
-            "id": 1,
-            "name": "Michele",
-            "surname": "Alexys",
-            "email": "michelefratini1@gmail.com",
-            "region": "Falkland Islands (the) [Malvinas]",
-            "phone": "1234567890",
-            "additionalRequests": "",
-            "apartment": "Portico",
-            "checkin": "2023-12-26T23:00:00.000Z",
-            "checkout": "2023-12-29T23:00:00.000Z",
-            "people": 2
-        },
-        {
-            "id": 1,
-            "name": "fracazzo",
-            "surname": "Davelletri",
-            "email": "fracazzodavelletri@gmail.com",
-            "region": "Taiwan",
-            "phone": "1234567890",
-            "additionalRequests": "",
-            "apartment": "Portico",
-            "checkin": "2024-07-22T22:00:00.000Z",
-            "checkout": "2024-07-24T22:00:00.000Z",
-            "people": 2
-        }
+        
     ],
     "users": [
         {
             "id": 0,
             "email": "AdMiNiStRaToRfKj0!",
             "password": "qazwsxedcrfvtgbyhnujmikolp"
-        },
-        {
-            "id": 1,
-            "name": "Michele",
-            "surname": "Fratini",
-            "email": "michelefratini@gmail.com",
-            "password": "Michelefratini",
-            "region": "Iceland"
-        },
-        {
-            "id": 2,
-            "name": "Andrea",
-            "surname": "Vannini",
-            "email": "andreavannini@gmail.com",
-            "password": "miaooooooo",
-            "region": "Falkland Islands (the) [Malvinas]"
-        },
-        {
-            "id": 3,
-            "name": "Daniele",
-            "surname": "Polverini",
-            "email": "danielepolverini@gmail.com",
-            "password": "Pippaassoluta",
-            "region": "Republic of North Macedonia"
         }
     ]
 }
