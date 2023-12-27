@@ -377,7 +377,7 @@ app.post("/newuser", urlencodedParser, function(req, res) {
 });
 
 // Post request to login and enter in the ui section
-app.post("/user", urlencodedParser, function(req, res) {
+app.post("https://clio4rs.github.io/Casatrastullo_webapp/user", urlencodedParser, function(req, res) {
   const userEmail = req.body["email"];
   const userPassword = req.body["password"];
 
