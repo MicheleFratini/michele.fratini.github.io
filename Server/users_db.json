@@ -1,12 +1,45 @@
 {
     "reservations": [
-        
+        {
+            "id": 1,
+            "name": "Michele",
+            "surname": "Fratini",
+            "email": "michelefratini@gmail.com",
+            "region": "Denmark",
+            "phone": "1234567890",
+            "additionalRequests": "",
+            "apartment": "Portico",
+            "checkin": "2024-01-10T23:00:00.000Z",
+            "checkout": "2024-01-11T23:00:00.000Z",
+            "people": 2
+        },
+        {
+            "id": 2,
+            "name": "Matteo",
+            "surname": "Fermi",
+            "email": "michelefratini@gmail.com",
+            "region": "Denmark",
+            "phone": "1234567890",
+            "additionalRequests": "",
+            "apartment": "Stalla",
+            "checkin": "2024-01-10T23:00:00.000Z",
+            "checkout": "2024-01-11T23:00:00.000Z",
+            "people": 2
+        }
     ],
     "users": [
         {
             "id": 0,
             "email": "AdMiNiStRaToRfKj0!",
             "password": "qazwsxedcrfvtgbyhnujmikolp"
+        },
+        {
+            "id": 1,
+            "name": "Michele",
+            "surname": "Fratini",
+            "email": "michelefratini@gmail.com",
+            "password": "Michele2001!",
+            "region": "Denmark"
         }
     ]
 }

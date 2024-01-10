@@ -2,7 +2,6 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const fs = require("fs");
 const { Pool } = require("pg");
-const puppeteer = require("puppeteer");
 const app = express();
 const data = fs.readFileSync("users_db.json");
 const jsonData = JSON.parse(data);
@@ -13,13 +12,14 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoda-form
 app.use(express.urlencoded({ extended: true }));
+
 // DB connection setting
 const db = new Pool({
-  host: "localhost",
-  user: "postgres",
-  password: "Michele2024!",
-  database: "postgres",
-  port: 5001
+  host: "bdaqmf6xngg39uikgco2-postgresql.services.clever-cloud.com",
+  user: "usejhihitedy4m8fjy5b",
+  password: "qf8t4xMEs9aaZkPbAZqawldFV4VYnW",
+  database: "bdaqmf6xngg39uikgco2",
+  port: 50013
 });
 // DB connection
 db.connect(err => {
@@ -377,7 +377,7 @@ app.post("/newuser", urlencodedParser, function(req, res) {
 });
 
 // Post request to login and enter in the ui section
-app.post("https://clio4rs.github.io/Casatrastullo_webapp/user", urlencodedParser, function(req, res) {
+app.post("/user", urlencodedParser, function(req, res) {
   const userEmail = req.body["email"];
   const userPassword = req.body["password"];
 

@@ -41,14 +41,6 @@ export class HomeComponent {
     "../assets/sixthR.PNG"
   ];
   title: string = this.titles[0];
-  /* regions: string[] = [
-    "Italia",
-    "Italia",
-    "Italia",
-    "Belgio",
-    "Paesi Bassi",
-    "Italia"
-  ]; */
 
   ngOnInit() {
     Fancybox.bind(
