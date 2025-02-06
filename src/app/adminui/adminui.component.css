@@ -1,0 +1,34 @@
+.face {
+  width: 100%;
+  height: 40%;
+}
+
+.main {
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+.navbarui {
+  display: inline-block;
+  text-align: center;
+  margin-top: -4px;
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+  box-shadow: .0200rem .125rem .7375rem rgba(0, 0, 0, .5);
+
+  color: black;
+}
+.menubuttons {
+  text-align: center;
+  font-family: 'Anthony Hunters';
+  font-size: 35px;
+  margin-top: 10px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.menubuttons:hover {
+  color: green;
+  transition: 0.7s;
+}

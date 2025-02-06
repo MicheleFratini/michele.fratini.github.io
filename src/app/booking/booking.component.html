@@ -1,0 +1,280 @@
+<!-- Main form where i pick the information of the booking request, that later will be sent to the server to check the availability -->
+
+<form style="text-align: center; margin-top: 20px; font-family: 'Raleway',sans-serif;" #bookingFrorm1="ngForm">
+  <div style="display: inline-flex; ">
+    <mat-form-field style="width: 100%; height: 50%; margin-top: 9px;">
+      <mat-label>Inserisci l'intervallo di tempo</mat-label>
+      <mat-date-range-input [formGroup]="range" [min]="todayDate" [rangePicker]="picker">
+        <input matStartDate formControlName="start" placeholder="Data check-in">
+        <input matEndDate formControlName="end" placeholder="Data check-out">
+      </mat-date-range-input>
+      <mat-hint>DD/MM/YYYY – DD/MM/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+
+    <mat-form-field style="width: 65%; margin-top: 10px;">
+      <mat-label>Num.Persone</mat-label>
+      <mat-select name="people" required ngModel>
+        <mat-option *ngFor="let i of maxPeople" [value]="i">{{i}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox color="primary" name="handicap" ngModel
+      style="margin-left: 30px; margin-top: 20px; width: 100%; font-family: 'Raleway Thin';">è presente almeno una
+      persona disabile
+    </mat-checkbox>
+  </div>
+  <br>
+  <button mat-raised-button color="primary" style="margin-top: 40px; width: 10%;"
+    (click)="avaiability(bookingFrorm1.value)">Ricerca</button>
+  <br>
+
+  <!--Research Result-->
+  <!-- <div style="text-align: center; margin-top: 30px; width: 70%; display: inline-flex;">
+    <mat-progress-bar mode="query"></mat-progress-bar>
+  </div> -->
+
+</form>
+<!-- To Do: Continue here -->
+<div id="message"></div>
+
+<!-- This div contains all the results of the user request -->
+<div id="results" class="notextended">
+  <!-- Arrow to go back after a step forward -->
+  <div id="arrow" class="notextended">
+    <a (click)="avaiability(bookingFrorm1.value)" >
+      <img src="./assets/backarrow.png" alt="Indietro" style="width: 50px;
+      height: 50px;
+      margin-left: 50px;"></a>    
+    
+  </div>
+
+  <div id="separator" style="width: 600px;" class="notextended"></div>
+
+  <!-- This div will be print only after the booking request was done -->
+  <div id="report" style="width: 1000px; height: 200px; margin-top: 200px; text-align: center; margin-left:-50px; ">
+    <p style="font-size: 20px; font-family: 'Raleway Thin';">Prenotazione effettuata con successo!</p>
+    <br>
+    <p style="font-size: 18px; font-family: 'Raleway Thin'; margin-top: 10px;">
+      Accedi all'area riservata, con la mail usata per la prenotazione, in alto a destra per avere tutte le informazioni necessarie
+      riguardo il tuo soggiorno nella nostra struttura. Potrai accedere ad una serie di informazioni aggiuntive come itinerari personalizzati e 
+      prenotare attività che ti faranno vivere a pieno la nostra magnifica regione. <br><br>
+      Ti ringraziamo molto per aver scelto la nostra struttura!</p>
+  </div>
+
+  <!-- Porch reservation module -->
+  <div id="porchReservation" class="notextended">
+    <form style="width: 60%; text-align: center;" #userFrorm1="ngForm"
+      (ngSubmit)="createReservation(userFrorm1.value, 'Portico')">
+
+      <div style="display: inline-flex; width: 102.5%;">
+        <mat-form-field style="width: 60%; margin-top: 30px;">
+          <mat-label style="font-size: 95%;text-align: center;">Nome e Cognome</mat-label>
+          <input matInput placeholder="es. Jacob Jonson" type="text" name="name" required ngModel>
+        </mat-form-field>
+
+        <mat-form-field style="width: 40%; margin-top: 30px; margin-left: 10px;">
+          <mat-label>State</mat-label>
+          <mat-select name="region" ngModel required>
+            <mat-option matInput type="text" placeholder="Ex. California" *ngFor="let i of countryList"
+              [value]="i">{{i}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field style="width: 100%;">
+        <mat-label>E-mail</mat-label>
+        <input matInput placeholder="pat@example.com" type="text" name="email" required ngModel>
+      </mat-form-field>
+      <br>
+      <mat-form-field style="width: 100%;">
+        <mat-label style="font-size: 95%;text-align: center;">Numero di telefono</mat-label>
+        <input matInput type="text" name="phone" required ngModel>
+      </mat-form-field>
+      <br>
+      <mat-form-field style="width: 100%;">
+        <mat-label>Richieste speciali</mat-label>
+        <textarea matInput #message maxlength="256" type="text" name="additionalRequests" required ngModel></textarea>
+        <mat-hint align="start"><span><strong>Attenzione!</strong> Non divulgare informazioni sensibili</span>
+        </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button type="submit" color="primary"
+        style="margin-top: 50px; width: 50%; font-family: 'Raleway Thin';">Conferma
+        Prenotazione</button>
+      <br>
+    </form>
+  </div>
+
+  <!-- Apartment info re-printed -->
+  <div id="result1" class="notextended" style="border-right: 2px solid black;">
+    <img src="./assets/portico.jpg" style="width: 350px; height: 200px; border-radius: 10px;">
+    <p style="margin-top:40px; font-family: 'Anthony Hunters'; font-size:40px">Il Portico</p>
+    <p style="margin-top:30px; font-family: 'Raleway Thin'; font-size:17px">
+      Questo appartamento è quello che offre la miglior vista sulla piscina.<br>
+      Portico godibile sopratturro d'estate. <br>
+      Due accessi, uno al piano terra e uno con scale.<br>
+      Bagno con sanitari non appositi per persone con grave disabilità motoria. <br><br> 
+      1 x Camera matrimoniale <br>
+      1 x Camera con letti a castello <br> <br>
+      Prezzo <br>
+      {{this.porchPrise}} <br>
+    </p>
+    <button id="porchBookingButton" mat-raised-button color="primary" style="margin-top: 30px; width: 100px;"
+      (click)="booking('Portico')">Prenota</button>
+  </div>
+
+  <div id="separator1" style="width: 50%;" class="notextended"></div>
+
+  <!-- Stable reservation module -->
+  <div id="stableReservation" class="notextended">
+    <form style="width: 60%; text-align: center;" #userFrorm2="ngForm"
+      (ngSubmit)="createReservation(userFrorm2.value , 'Stalla')">
+
+      <div style="display: inline-flex; width: 102.5%;">
+        <mat-form-field style="width: 60%; margin-top: 30px;">
+          <mat-label style="font-size: 95%;text-align: center;">Nome e Cognome</mat-label>
+          <input matInput placeholder="es. Jacob Jonson" type="text" name="name" required ngModel>
+        </mat-form-field>
+
+        <mat-form-field style="width: 40%; margin-top: 30px; margin-left: 10px;">
+          <mat-label>State</mat-label>
+          <mat-select name="region" ngModel required>
+            <mat-option matInput type="text" placeholder="Ex. California" *ngFor="let i of countryList"
+              [value]="i">{{i}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field style="width: 100%;">
+        <mat-label>E-mail</mat-label>
+        <input matInput placeholder="pat@example.com" type="text" name="email" required ngModel>
+      </mat-form-field>
+      <br>
+      <mat-form-field style="width: 100%;">
+        <mat-label style="font-size: 95%;text-align: center;">Numero di telefono</mat-label>
+        <input matInput type="text" name="phone" required ngModel>
+      </mat-form-field>
+      <br>
+      <mat-form-field style="width: 100%;">
+        <mat-label>Richieste speciali</mat-label>
+        <textarea matInput #message maxlength="256" type="text" name="additionalRequests" required ngModel></textarea>
+        <mat-hint align="start"><span><strong>Attenzione!</strong> Non divulgare informazioni sensibili</span>
+        </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button type="submit" color="primary"
+        style="margin-top: 50px; width: 50%; font-family: 'Raleway Thin';">Conferma
+        Prenotazione</button>
+      <br>
+    </form>
+  </div>
+  <!-- Apartment info re-printed -->
+  <div id="result2" class="notextended" style="border-right: 2px solid black;">
+    <img src="./assets/stalla.jpg" style="width: 350px; height: 200px; border-radius: 10px;">
+    <p style="margin-top:40px; font-family: 'Anthony Hunters'; font-size:40px">La stalla</p>
+    <p style="margin-top:30px; font-family: 'Raleway Thin'; font-size:17px">
+      Questo appartamento è situato al piano terra.<br>
+      Dotato di un bagno adatto anche per persone con gravi disabilità motorie.<br><br>
+      1 x Camera matrimoniale <br>
+      1 x Camera con due letti singoli <br>
+      1 x Divano letto matrimoniale in soggiorno <br> <br>
+      Prezzo <br>
+      {{this.stablePrise}}
+    </p>
+    <button id="stableBookingButton" mat-raised-button color="primary" style="margin-top: 30px; width: 100px;"
+      (click)="booking('Stalla')">Prenota</button>
+  </div>
+  <!-- Little Porch reservation module -->
+  <div id="littlePorchReservation" class="notextended">
+    <form style="width: 60%; text-align: center;" #userFrorm3="ngForm"
+      (ngSubmit)="createReservation(userFrorm3.value, 'Portichetto')">
+
+      <div style="display: inline-flex; width: 102.5%;">
+        <mat-form-field style="width: 60%; margin-top: 30px;">
+          <mat-label style="font-size: 95%;text-align: center;">Nome e Cognome</mat-label>
+          <input matInput placeholder="es. Jacob Jonson" type="text" name="name" required ngModel>
+        </mat-form-field>
+
+        <mat-form-field style="width: 40%; margin-top: 30px; margin-left: 10px;">
+          <mat-label>State</mat-label>
+          <mat-select name="region" ngModel required>
+            <mat-option matInput type="text" placeholder="Ex. California" *ngFor="let i of countryList"
+              [value]="i">{{i}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field style="width: 100%;">
+        <mat-label>E-mail</mat-label>
+        <input matInput placeholder="pat@example.com" type="text" name="email" required ngModel>
+      </mat-form-field>
+      <br>
+      <mat-form-field style="width: 100%;">
+        <mat-label style="font-size: 95%;text-align: center;">Numero di telefono</mat-label>
+        <input matInput type="text" name="phone" required ngModel>
+      </mat-form-field>
+      <br>
+      <mat-form-field style="width: 100%;">
+        <mat-label>Richieste speciali</mat-label>
+        <textarea matInput #message maxlength="256" type="text" name="additionalRequests" required ngModel></textarea>
+        <mat-hint align="start"><span><strong>Attenzione!</strong> Non divulgare informazioni sensibili</span>
+        </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button type="submit" color="primary"
+        style="margin-top: 50px; width: 50%; font-family: 'Raleway Thin';">Conferma
+        Prenotazione</button>
+      <br>
+    </form>
+  </div>
+  <!-- Apartment info re-printed -->
+  <div id="result3" class="notextended">
+    <img src="./assets/portichetto.jpg" style="width: 350px; height: 200px; border-radius: 10px;">
+    <p style="margin-top:40px; font-family: 'Anthony Hunters'; font-size:40px">Il Portichetto</p>
+    <p style="margin-top:30px; font-family: 'Raleway Thin'; font-size:17px">
+      m2<br>
+      Portico godibile sopratturro d'estate <br><br>
+      2 x Camera matrimoniale <br>
+      1 x Divano letto matrimoniale in soggiorno <br> <br>
+      Prezzo <br>
+      {{this.littlePorchPrise}} <br>
+    </p> <br>
+    <button id="littlePorchBookingButton" mat-raised-button color="primary" style="margin-top: 30px; width: 100px;"
+      (click)="booking('Portichetto')">Prenota</button>
+  </div>
+</div>
+
+
+<!-- <app-searchresult></app-searchresult> -->
+<!-- <div style="text-align: center; margin-top: 45px;">
+  <mat-form-field>
+    <mat-label>Check-in</mat-label>
+    <input matInput [matDatepicker]="picker1">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+</div>
+<div style="text-align: center; margin-top: 20px;">
+  <mat-form-field>
+    <mat-label>Check-out</mat-label>
+    <input matInput [matDatepicker]="picker2">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+</div>
+
+<mat-form-field class="example-form-field">
+  <mat-label>N.Persone</mat-label>
+  <input matInput type="number" value="value">
+
+  
+
+
+</mat-form-field> -->

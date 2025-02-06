@@ -1,0 +1,63 @@
+.navbarui {
+  display: inline-block;
+  text-align: center;
+  margin-top: -4px;
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+  box-shadow: .0200rem .125rem .7375rem rgba(0, 0, 0, .5);
+
+  color: black;
+}
+.face {
+  width: 100%;
+  height: 40%;
+  z-index: 1;
+}
+.menubuttons {
+  text-align: center;
+  font-family: 'Anthony Hunters';
+  font-size: 35px;
+  margin-top: 10px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.menubuttons:hover {
+  color: green;
+  transition: 0.7s;
+}
+.apdiv {
+  display: flex;
+  width: 100%;
+  margin-left: 50px;
+  height: 100px;
+}
+.sectionHome {
+  display: block;
+  font-family: 'Raleway Thin';
+  margin-top: 230px;
+  text-align: center;
+  width: 100%;
+}
+.section1 {
+  width: 100%;
+  height: 600px;
+}
+.section2 {
+  display: inline-flex;
+  text-align: center;
+  width: 100%;
+  height: 400px;
+}
+.section3 {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  height: 600px;
+}
+.section4 {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  height: 200px;
+}

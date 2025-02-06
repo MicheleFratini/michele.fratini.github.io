@@ -1,0 +1,74 @@
+<div style="width: 100%; height: 60%; margin-top: 200px;text-align: center;">
+    <p style="font-family: 'Anthony Hunters'; font-size: 50px; margin-left: 100px; ">Vuoi accedere alla tua area
+        riservata?</p>
+    <div style="margin-top: 100px; display: inline-flex; text-align: center; width: 60%;">
+        <form style="width: 35%; text-align: center; margin-right: 50px;" #userFrorm1="ngForm"
+            (ngSubmit)="onUserCreate(userFrorm1.value)">
+            <p style="font-family: 'Anthony Hunters'; font-size: 40px; ">Registrati</p>
+            <div style="display: inline-flex; width: 100%;">
+                <mat-form-field style="width: 60%; margin-top: 30px;">
+                    <mat-label style="font-size: 95%;text-align: center;">Nome e Cognome</mat-label>
+                    <input matInput placeholder="es. Jacob Jonson" type="text" name="name" required ngModel>
+                </mat-form-field>
+
+                <mat-form-field style="width: 40%; margin-top: 30px; margin-left: 10px;">
+                    <mat-label>State</mat-label>
+                    <mat-select name="region" ngModel required>
+                        <mat-option matInput type="text" placeholder="Ex. California" *ngFor="let i of countryList"
+                            [value]="i">{{i}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <mat-form-field style="width: 100%;">
+                <mat-label>Inserisci la tua mail</mat-label>
+                <input matInput placeholder="pat@example.com" type="text" name="email" required ngModel>
+            </mat-form-field>
+
+            <mat-form-field style="width: 100%;">
+                <mat-label>Inserisci una password</mat-label>
+                <input matInput placeholder="min. 8 lettere" type="text" [type]="input.hide ? 'password' : 'text'"
+                    name="password" required ngModel>
+                <button mat-icon-button matSuffix (click)="input.hide = !input.hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="input.hide">
+                    <mat-icon>{{input.hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <br>
+            <button mat-raised-button type="submit" color="primary"
+                style="margin-top: 40px; width: 40%; ">Registrati</button>
+            <br>
+        </form>
+
+        <div style="width: 30%;height: 20%; margin-top: 150px; margin-right: 50px;">
+            <p style="font-family: 'Anthony Hunters'; font-size: 40px; text-align: center;">Oppure</p>
+        </div>
+
+        <form id="login" style="text-align: center; width: 40%;" #userFrorm2="ngForm"
+            (ngSubmit)="onUserLog(userFrorm2.value)">
+            <p style="font-family: 'Anthony Hunters'; font-size: 40px;">Accedi</p>
+
+            <mat-form-field style="width: 100%; margin-top: 30px; ">
+                <mat-label>Inserisci la tua mail</mat-label>
+                <input matInput placeholder="pat@example.com" name="email" required ngModel>
+            </mat-form-field>
+
+            <mat-form-field style="width: 100%;">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="input.hide ? 'password' : 'text'" name="password" ngModel>
+                <button mat-icon-button matSuffix (click)="input.hide = !input.hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="input.hide">
+                    <mat-icon>{{input.hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <br>
+            <button mat-raised-button type="submit" color="primary"
+                style="margin-top: 40px; width: 40%;">Accedi</button>
+            <br>
+
+        </form>
+    </div>
+</div>
+<a id="nouser" routerLink=""><img class="user" src="../assets/close.png"></a>

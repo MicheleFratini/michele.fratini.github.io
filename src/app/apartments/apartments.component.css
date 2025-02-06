@@ -1,0 +1,78 @@
+
+
+.example-card {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  font-size: 15px;
+}
+
+.stalla {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/10137/10137403.png');
+  background-size: cover;
+}
+
+.portichetto {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/3601/3601002.png');
+  background-size: cover;
+}
+
+.portico {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/3840/3840739.png');
+  background-size: cover;
+}
+.imageDimension {
+  max-width: 700px;
+  margin-left: 150px;
+  border-radius: 25px;
+}
+
+.button {
+  position: relative;
+  text-align: center;
+  min-width: 160px;
+  height: 46px;
+  margin: 30px 3px 30px 3px;
+  padding: 0 25px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #a5a5a5;
+  border-radius: 25px;
+  background-color: #fff;
+  color: #a5a5a5;
+  font-family: Gotham Medium;
+  font-size: 21px;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  float: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #a5a5a5;
+  color: white;
+  transition: 0.6s;
+}
+
+.imageNavR {
+  position: absolute;
+  max-width: 20px;
+  max-height: 10px;
+  bottom: 200px; /*your button position*/
+  right: 25px; /*your button position*/
+  padding: 0;
+  border: none;
+  background: none;
+}
+.imageNavL {
+  position: absolute;
+  max-width: 20px;
+  max-height: 10px;
+  bottom: 200px; /*your button position*/
+  left: 170px; /*your button position*/
+  padding: 0;
+  border: none;
+  background: none;
+}
+button:focus { outline: none; }
