@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 const db = new Pool({
   host: "localhost",
   user: "postgres",
-  password: "Michele2024!",
+  password: "Insidethedarkness2001!",
   database: "postgres",
   port: 5001
 });

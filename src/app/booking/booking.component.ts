@@ -661,7 +661,7 @@ export class BookingComponent {
                   alert("Il numero di telefono contiene caratteri");
                 } else {
                   this.http
-                    .post("http://localhost:8080/booking", [
+                    .post("http://localhost:4200/booking", [
                       data,
                       apartment,
                       checkin,
